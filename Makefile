@@ -1,8 +1,9 @@
+
 build:
-	docker build -t nginx-images2 .
+	docker build -t nginx-image-resizer .
 
 run:
-	docker run -p 3008:80 -v ~/grafana-web/nginx-images2/html:/var/www/html nginx-images2
+	docker run -p 3008:80 -v $(PWD)/html:/var/www/html nginx-image-resizer
 
 stop:
-	docker stop nginx-images2
+	docker stop nginx-image-resizer
