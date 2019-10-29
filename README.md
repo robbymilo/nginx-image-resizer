@@ -13,3 +13,5 @@ Then navigte to:
 * `.svg` - not working
 * `.png` - working
 * `.mp4` - not working
+
+Use nginx-nocache.conf if you don't want to use caching on the server.
