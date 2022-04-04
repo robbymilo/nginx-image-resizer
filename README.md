@@ -1,10 +1,8 @@
 # nginx image resizer
 
-On-the-fly image resizing from object storages such as S3.
+On-the-fly cached image resizing with nginx.
 
-`make build` to build the image
-
-`make run` to run the container
+To run locally, run `make run` in your terminal to run the docker image.
 
 Then navigte to:
 
@@ -22,5 +20,3 @@ Then navigte to:
 * `h=` height
 * `s=` sharpening
 * `q=` quality
-
-Use nginx-nocache.conf if you don't want to use caching on the server.

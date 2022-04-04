@@ -1,19 +1,15 @@
-FROM ubuntu
-RUN apt-get update 
-RUN apt-get install -y nginx nginx-extras
+FROM alpine:3.15.3
+RUN apk update && apk add nginx nginx-mod-http-image-filter && rm -rf /var/cache/apk/*
+
 RUN rm -v /etc/nginx/nginx.conf
 ADD nginx.conf /etc/nginx/
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-
-RUN mkdir -p /var/cache/nginx/images
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf && \
+  mkdir -p /var/cache/nginx/images
 
 EXPOSE 80
 
 RUN nginx -v
 
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
-
-# COPY ./files/ /var/www/html/
+COPY html/images /var/www/html/
 
 CMD ["/usr/sbin/nginx"]
