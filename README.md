@@ -6,6 +6,8 @@ On-the-fly cached image resizing with nginx.
 
 To run locally, run `docker run -p 3000:80 -v ./html:/var/www/html robbymilo/nginx-image-resizer` in your terminal to run the docker image.
 
+Change the volume to a directory of images on your machine or server.
+
 Then navigte to:
 
 `http://localhost:3000/images/test.jpg?w=1500&s=75&q=50`
