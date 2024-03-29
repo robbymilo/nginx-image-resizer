@@ -12,12 +12,6 @@ Then navigte to:
 
 `http://localhost:3000/images/test.jpg?w=1500&s=75&q=50`
 
-* `.jpg` - working
-* `.gif` - working (no amination on resize)
-* `.svg` - not working
-* `.png` - working
-* `.mp4` - not working
-
 Supports `.jpg`, `.gif` (without animation), and `.png`.
 
 ### Options via query params
