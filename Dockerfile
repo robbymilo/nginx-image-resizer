@@ -1,5 +1,5 @@
-FROM alpine:3.15.3
-RUN apk update && apk add nginx nginx-mod-http-image-filter && rm -rf /var/cache/apk/*
+FROM alpine:3.19.1
+RUN apk update && apk add --no-cache nginx nginx-mod-http-image-filter
 
 RUN rm -v /etc/nginx/nginx.conf && \
   echo "daemon off;" >> /etc/nginx/nginx.conf && \
